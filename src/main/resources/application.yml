@@ -1,0 +1,9 @@
+spring:
+  config:
+    activate:
+      on-profile: cloud
+  data:
+    mongodb:
+      host: localhost
+      database: quizmonster
+      port: 27017
