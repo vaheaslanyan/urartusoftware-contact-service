@@ -1,9 +1,10 @@
 spring:
-  config:
-    activate:
-      on-profile: cloud
+  server:
+    port: 8080
   data:
     mongodb:
-      host: localhost
-      database: quizmonster
-      port: 27017
+      uri: ${US_MONGODB_URI}
+      database: ${US_MONGODB_DB}
+      username: ${US_MONGODB_USERNAME}
+      password: ${US_MONGODB_PASSWORD}
+      authentication-database: admin
