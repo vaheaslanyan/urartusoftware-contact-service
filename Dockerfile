@@ -3,7 +3,7 @@
 
 # temp container to build using gradle
 FROM gradle:7.6.1-jdk17 AS TEMP_BUILD_IMAGE
-ENV APP_HOME=/usr/app/
+ENV APP_HOME=/
 WORKDIR $APP_HOME
 COPY build.gradle settings.gradle $APP_HOME
 
