@@ -20,5 +20,11 @@ RUN gradle clean build
 FROM openjdk:17
 WORKDIR $APP_HOME
 EXPOSE 8080
-COPY /build/libs/*.jar /opt/app.jar
+COPY --from=TEMP_BUILD_IMAGE $APP_HOME/build/libs/*.jar .
 ENTRYPOINT exec java -jar app.jar
+
+#FROM openjdk:17
+#WORKDIR $APP_HOME
+#EXPOSE 8080
+#COPY /build/libs/*.jar /opt/app.jar
+#ENTRYPOINT exec java -jar app.jar
