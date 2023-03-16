@@ -2,7 +2,7 @@
 # ref: https://docs.docker.com/develop/develop-images/multistage-build/
 
 # temp container to build using gradle
-FROM gradle:5.3.0-jdk-alpine AS TEMP_BUILD_IMAGE
+FROM gradle:7.6.1-jdk17 AS TEMP_BUILD_IMAGE
 ENV APP_HOME=/usr/app/
 WORKDIR $APP_HOME
 COPY build.gradle settings.gradle $APP_HOME
@@ -18,7 +18,7 @@ RUN gradle clean build
 
 # actual container
 FROM openjdk:17
-WORKDIR /opt
+WORKDIR $APP_HOME
 EXPOSE 8080
 RUN ./gradlew build
 COPY /build/libs/*.jar /opt/app.jar
