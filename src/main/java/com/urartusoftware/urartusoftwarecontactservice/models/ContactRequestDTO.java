@@ -1,24 +1,39 @@
 package com.urartusoftware.urartusoftwarecontactservice.models;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 public class ContactRequestDTO {
 
     private String id;
     private String name;
     private String email;
-    private long phone;
+    private String phone;
     private String websiteUrl;
     private String budget;
     private String projectDescription;
     private String businessSource;
 
-    public ContactRequestDTO(String id, String name, String email, long phone, String websiteUrl, String budget, String projectDescription, String businessSource) {
+    public ContactRequestDTO() {
+    }
+
+    public ContactRequestDTO(String id, String name, String email, String phone, String websiteUrl, String projectDescription, String budget, String businessSource) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.websiteUrl = websiteUrl;
-        this.budget = budget;
         this.projectDescription = projectDescription;
+        this.budget = budget;
+        this.businessSource = businessSource;
+    }
+
+    public ContactRequestDTO(String name, String email, String phone, String websiteUrl, String projectDescription, String budget, String businessSource) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.websiteUrl = websiteUrl;
+        this.projectDescription = projectDescription;
+        this.budget = budget;
         this.businessSource = businessSource;
     }
 
@@ -63,7 +78,7 @@ public class ContactRequestDTO {
         return email;
     }
 
-    public long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
@@ -91,7 +106,7 @@ public class ContactRequestDTO {
         this.email = email;
     }
 
-    public void setPhone(long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

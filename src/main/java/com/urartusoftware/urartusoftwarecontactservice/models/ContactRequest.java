@@ -10,13 +10,16 @@ public class ContactRequest {
     private String id;
     private String name;
     private String email;
-    private long phone;
+    private String phone;
     private String websiteUrl;
     private String budget;
     private String projectDescription;
     private String businessSource;
 
-    public ContactRequest(String name, String email, long phone, String websiteUrl, String budget, String projectDescription, String businessSource) {
+    public ContactRequest() {
+    }
+
+    public ContactRequest(String name, String email, String phone, String websiteUrl, String budget, String projectDescription, String businessSource) {
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -77,7 +80,7 @@ public class ContactRequest {
         return email;
     }
 
-    public long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
@@ -105,7 +108,7 @@ public class ContactRequest {
         this.email = email;
     }
 
-    public void setPhone(long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
