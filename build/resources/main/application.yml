@@ -22,4 +22,10 @@ spring:
           ssl:
             trust: smtp.gmail.com
 
+deployment:
+  ip:
+    ui:
+      local: http://localhost:4200
+      deployed: https://urartusoftware.com
+
 
