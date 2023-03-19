@@ -26,10 +26,16 @@ public class ContactRequestController {
     @PostMapping
     public ContactRequest createRequest(@RequestBody final ContactRequestDTO crDTO) {
         EmailDetails ed = new EmailDetails();
-        ed.setSubject("New contact request");
+        ed.setSubject("New contact request from " + crDTO.getName());
         ed.setRecipient("vahe.sde@gmail.com");
-        ed.setMsgBody("Name: " + crDTO.getName() + "\n" +
-                "Email: " + crDTO.getEmail() + "\n");
+        ed.setMsgBody("You have a new contact request: \n\n" +
+                "Name: " + crDTO.getName() + "\n" +
+                "Email: " + crDTO.getEmail() + "\n" +
+                "Phone: " + crDTO.getPhone() + "\n" +
+                "Website: " + crDTO.getWebsiteUrl() + "\n" +
+                "Description: " + crDTO.getProjectDescription() + "\n" +
+                "Budget: " + crDTO.getBudget() + "\n" +
+                "Business source: " + crDTO.getBusinessSource());
 
         emailService.sendSimpleMail(ed);
         return crService.createContactRequest(crDTO);
