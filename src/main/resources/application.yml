@@ -26,4 +26,4 @@ deployment:
   ip:
     ui:
       local: http://localhost:4200
-      deployed: 216.24.57.1
+      deployed: https://urartusoftware.com
