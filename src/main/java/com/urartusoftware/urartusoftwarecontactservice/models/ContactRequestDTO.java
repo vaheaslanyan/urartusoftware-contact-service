@@ -1,7 +1,5 @@
 package com.urartusoftware.urartusoftwarecontactservice.models;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
 public class ContactRequestDTO {
 
     private String id;
